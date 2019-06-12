@@ -1,0 +1,34 @@
+<html ng-app="mojModul">
+<head>
+	<meta charset="utf-8" />
+	<title>Angular JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="script1.js"></script>
+</head>
+<body>
+<h2>Angular JS</h2>
+<div ng-controller="kontroler">
+<table border="1">
+Broj redova za prikaz: <input type="number" step="1" min="0" max="{{ukupno}}" ng-model="brojRedova" /><br><br>
+<tr>
+	<th>Index</th>
+	<th>Ime</th>
+	<th>Prezime</th>
+	<th>Pol</th>
+	<th>Datum rodjenja</th>
+	<th>Plata (broj)</th>
+	<th>Plata (valuta)</th>
+</tr>
+<tr ng-repeat="x in zaposleni | limitTo:brojRedova">
+	<td>{{$index}}</td>
+	<td>{{x.ime | lowercase}}</td>
+	<td>{{x.prezime | uppercase}}</td>
+	<td>{{x.pol}}</td>
+	<td>{{x.datrodj | date : "dd.MM.yy"}}</td>
+	<td>{{x.plata | number: 2}}</td>
+	<td>{{x.plata | currency:"€ ":0}}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html  ng-app="mojModul">
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+
+<link href="../fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+
+<link href="../css/style.css" type="text/css" rel="stylesheet">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="../javascript/script.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+	
+	<div id="header">
+	
+		<div id="logo">
+			<img src="../images/logo.png" alt="simple forum">
+		</div>
+		
+		<div id="slogan">
+			<p><?php echo $_SESSION['ime']."  ";?><a href="index.php?logout">Odjavite se</a></p>
+		</div>
+	
+	</div><!-- end #header -->
+	
+	<div id="nav">
+	
+		<ul>
+			<li><a href="pocetna.php">Početna</a></li>
+		<!--	<li><a href="#">info</a>
+				<ul>
+					<li><a href="#">podstavka 1</a></li>
+					<li><a href="#">podstavka 2</a>
+						<ul>
+							<li><a href="#">treci nivo 1</a></li>
+							<li><a href="#">treci nivo 2</a></li>
+						</ul>
+					</li>
+					<li><a href="#">podstavka 3</a></li>
+				</ul>
+			</li>-->
+			<li><a href="#">Korisnici</a>
+				<ul>
+					<li><a href="adduser.php">Dodavanje</a></li>
+					<li><a href="updateuser.html">Izmena</a></li>
+					<li><a href="deleteuser.php">Brisanje</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Postovi</a>
+				<ul>
+					<li><a href="addpost.php">Dodaj post</a></li>
+					<li><a href="updatepost.php">Izmena</a></li>
+					<li><a href="deletepost.php">Brisanje</a></li>
+				</ul>
+			</li>
+			<!--<li><a href="#">about us &amp; contact</a></li>-->
+		</ul>
+		
+		
+	
+	</div><!-- end #nav -->
+	
+	<div id="main">
+	<div id="container">
+	
+	
+	
+		<div ng-controller="kontroler">
+<div>
+<div class="row">
+      <div class="col-25">
+        <label for="fname">Id:</label>
+      </div>
+      <div class="col-75">
+		<input type="text" id="fname" name="firstname" ng-model="id" placeholder="id" readonly/>
+      </div>
+    </div>
+	<div class="row">
+      <div class="col-25">
+        <label for="fname">Ime:</label>
+      </div>
+      <div class="col-75">  
+<input type="text" id="fname" name="firstname" ng-model="ime" placeholder="Unesi ime" />
+      </div>
+    </div><div class="row">
+      <div class="col-25">
+        <label for="lname">Prezime:</label>
+      </div>
+      <div class="col-75">
+<input type="text" id="lname" name="lastname"  ng-model="prezime" placeholder="Unesi prezime"/>
+      </div>
+    </div><div class="row">
+      <div class="col-25">
+        <label for="lname">Email:</label>
+      </div>
+      <div class="col-75">
+<input type="text" id="lname" name="lastname"  ng-model="email" placeholder="Unesi email"/>
+      </div>
+    </div>
+	
+	   <div class="row">
+      <div class="col-25">
+        <label for="lname">Status:</label></label>
+      </div>
+      <div class="col-75">
+<input type="text"  id="lname" name="lastname"  ng-model="status" placeholder="Unesi status"/>
+      </div>
+    </div>
+	
+	   <div class="row">
+      <div class="col-25">
+        <label for="lname">Lozinka:</label>
+      </div>
+      <div class="col-75">
+<input type="password" id="password" name="lastname"  ng-model="lozinka" placeholder="Unesi lozinku" style="
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+"/>
+      </div>
+    </div>
+	
+	
+    <div class="row"><br>
+<input type="button" ng-click="snimiPodatke()" value="Sačuvaj"/>
+    </div><br>
+	<div class="row">
+	 <input type="button" ng-click="snimiIzmene()" value="Izmeni"/>
+    </div>
+<div>{{poruka}}</div>
+</div><br>
+
+<div class="row">
+      <div class="col-25">
+        <label for="lname">Last Name</label>
+      </div>
+      <div class="col-75"><input type="text" id="lname" name="lastname"  placeholder="Pretraži" ng-model="searchText" /> <input type="checkbox" ng-model="exactMatch"/>
+
+      </div>
+    </div>
+
+
+<br><table>
+<tr>
+	<th>Index</th>
+	<th>Ime</th>
+	<th>Prezime</th>
+	<th>email</th>
+	<th>Status</th>
+	<th>Lozinka</th>
+	<th>Akcija</th>
+</tr>
+<tr ng-repeat="x in korisnici | filter: searchText: exactMatch" >
+	<td>{{x.id}}</td>
+	<td>{{x.ime }}</td>
+	<td>{{x.prezime }}</td>
+	<td>{{x.email}}</td>
+	<td>{{x.status }}</td>
+	<td>{{x.lozinka }}</td>
+	<td><button ng-click="obrisiKorisnika(x.id)">Obriši korisnika</button> <button ng-click="pripremiKorisnika(x)">Izmeni korisnika</button></td>
+</tr>
+</table>
+<br>
+
+</div>
+	</div><!-- end #continjer -->
+	</div><!-- end #main -->
+	
+	
+	
+	<div id="footer">
+		<p>Copyright &copy; 2018</p>
+	</div><!-- end #footer -->
+	
+</div><!-- end #wrapper -->
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

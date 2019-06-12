@@ -1,0 +1,37 @@
+<html ng-app="mojModul">
+<head>
+	<meta charset="utf-8" />
+	<title>Angular JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="script4.js"></script>
+</head>
+<body>
+<h2>Angular JS</h2>
+<div ng-controller="kontroler">
+Grad: <input type="text" ng-model="searchText.grad" /> <br>
+Prezime: <input type="text" ng-model="searchText.prezime" /> <br>
+<input type="checkbox" ng-model="exactMatch"/> Exact match
+<br><br>
+<table border="1">
+<tr>
+	<th>Index</th>
+	<th>Ime</th>
+	<th>Prezime</th>
+	<th>Pol</th>
+	<th>Grad</th>
+	<th>Plata</th>
+	
+</tr>
+<tr ng-repeat="x in zaposleni | filter: searchText: exactMatch" >
+	<td>{{$index}}</td>
+	<td>{{x.ime }}</td>
+	<td>{{x.prezime }}</td>
+	<td>{{x.pol}}</td>
+	<td>{{x.grad }}</td>
+	<td>{{x.plata }}</td>
+	
+</tr>
+</table>
+</div>
+</body>
+</html>

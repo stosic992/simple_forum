@@ -1,0 +1,310 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	background-color: #c6c6c6;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center top;
+	background-size:cover;
+}
+
+body {
+	margin: 0;
+	padding: 0;	
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	margin: 0.3em 0 0.5em;
+}
+h1 { font-size: 38px;}
+h2 { font-size: 30px;}
+h3 { font-size: 26px;}
+h4 { font-size: 24px;}
+h5 { font-size: 20px;}
+h6 { font-size: 18px;}
+
+a:link,
+a:visited {
+	color:#C51417;
+	text-decoration: none;
+}
+a:hover {
+	color:#A84B0B;
+	text-decoration: underline;
+}
+a:active {
+	color:#332223;
+}
+
+
+
+
+
+#wrapper {
+	width:950px;
+	padding: 0px 15px 15px 15px;
+	margin:0 auto;
+	background-color:#FFFFFF;
+	box-shadow:0 2px 5px #555555;
+}
+#header {
+	background:#226de5;
+	/*margin-bottom:15px;*/
+	/*padding:20px;*/
+	overflow:hidden;
+	background: url(../images/bar.png) #164e66;
+}
+#header a:link,
+#header a:visited {
+	color:#BCA95B;
+	text-decoration: none;
+}
+#header a:hover {
+	color:#FFFFFF;
+	text-decoration: underline;
+}
+#header a:active {
+	color:#444444;
+}
+
+
+#logo {
+	float:left;
+}
+#slogan {
+	float:right;
+	color: #FFFFFF;
+	font-style:italic;
+	font-size: 22px;
+	padding:15px;
+}
+#slogan p {
+	margin: 0;
+}
+#nav {
+	height:40px;
+	background:#164e66;
+	margin-bottom:15px;
+}
+#nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#nav ul li {
+	float:left;
+	position: relative;
+}
+#nav ul li a {
+	padding:10px;
+	height:20px;
+	line-height: 20px;
+	display: block;
+	transition: 0.5s all ease;
+}
+#nav ul li a:link,
+#nav ul li a:visited {
+	color:#FFFFFF;
+	text-decoration: none;
+}
+#nav ul li a:hover {
+	color:#FFFFFF;
+	background:#226de5;
+}
+#nav ul li a:active {
+	color:#333333;
+	background:#CCCCCC;
+}
+
+#nav ul li ul {
+	background:rgba(55,55,55,0.6);
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width:120px;
+	display: none; /* u startu */
+}
+#nav ul li ul li {
+	float: none;
+}
+#nav ul li:hover > ul {
+	display: block;
+}
+
+#nav ul li ul li ul {
+	left: 100%;
+	top: 0;
+}
+
+
+
+
+
+#social {
+	float: right;
+	margin: 4px 10px 0 0;
+}
+
+#social a {
+	font-size: 22px;
+	margin-left: 10px;
+}
+
+#social a:link,
+#social a:visited {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+#social a:hover {
+	color: #D48688;
+}
+#social a:active {
+	color: #BD1215;
+}
+
+#main {
+	float:left;
+	width:940px;
+	margin-bottom:15px;
+}
+/*#sidebar {
+	float:right;
+	width:280px;
+	margin-bottom:15px;
+	position: relative;
+}*/
+
+#sidebar .block h2 {
+	background:#BBB;
+	background-attachment: fixed;
+	color: #FFFFFF;
+	padding: 3px;
+}
+
+
+#footer {
+	background:#164e66;
+	clear:both;
+	text-align: center;
+	color: #CCCCCC;
+	font-size: 12px;
+	padding: 8px;
+}
+#footer p{
+	margin: 0;
+}
+
+
+
+
+
+table, tr, th ,td{
+	
+	border-collapse: collapse;
+	border: 3px solid black;
+	padding: 5px;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+tr: hover {background-color: #f5f5f5;}
+input[type=text] {
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding-left: 40px;
+	width: 200px;
+	height: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+#container {
+    box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+#password{
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+#pass{
+	
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=button] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+input[type=button]:hover {
+    background-color: #45a049;
+}
+
+#container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}

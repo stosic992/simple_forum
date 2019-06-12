@@ -1,0 +1,41 @@
+<html ng-app="mojModul">
+<head>
+	<meta charset="utf-8" />
+	<title>Angular JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="script2.js"></script>
+</head>
+<body>
+<h2>Angular JS</h2>
+<div ng-controller="kontroler">
+<table border="1">
+Način sortiranja: <select ng-model="sortColumn">
+<option value="ime">Ime</option>
+<option value="prezime">Prezime</option>
+<option value="datrodj">Datum rođenja</option>
+<option value="plata">Plata</option>
+</select><br>
+<input type="checkbox" ng-model="sortValue" /> Opadajući
+<br><br>
+<tr>
+	<th>Index</th>
+	<th>Ime</th>
+	<th>Prezime</th>
+	<th>Pol</th>
+	<th>Datum rodjenja</th>
+	<th>Plata (broj)</th>
+	<th>Plata (valuta)</th>
+</tr>
+<tr ng-repeat="x in zaposleni | orderBy:sortColumn:sortValue">
+	<td>{{$index}}</td>
+	<td>{{x.ime | lowercase}}</td>
+	<td>{{x.prezime | uppercase}}</td>
+	<td>{{x.pol}}</td>
+	<td>{{x.datrodj | date : "dd.MM.yy"}}</td>
+	<td>{{x.plata | number: 2}}</td>
+	<td>{{x.plata | currency:"€ ":0}}</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

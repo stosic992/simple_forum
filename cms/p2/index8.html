@@ -1,0 +1,47 @@
+<html ng-app="mojModul">
+<head>
+	<meta charset="utf-8" />
+	<title>Angular JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="script8.js"></script>
+</head>
+<body>
+<h2>Angular JS</h2>
+<div ng-controller="kontroler">
+<div style="border: 1px solid black; width:300px;padding: 5px">
+<input type="text" ng-model="id" readonly/> id:<br>
+<input type="text" ng-model="ime" /> ime<br>
+<input type="text" ng-model="prezime" /> prezime<br>
+<input type="text" ng-model="email" /> email<br>
+<input type="text" ng-model="status" /> status<br>
+<input type="text" ng-model="lozinka" /> lozinka<br><br>
+<input type="button" ng-click="snimiPodatke()" value="Snimi podatke"/> <input type="button" ng-click="snimiIzmene()" value="Snimi izmene"/><br>
+<div>{{poruka}}</div>
+</div><br>
+Tekst za pretragu: <input type="text" ng-model="searchText" /> <input type="checkbox" ng-model="exactMatch"/> Exact match
+<br><br>
+<table border="1">
+<tr>
+	<th>Index</th>
+	<th>Ime</th>
+	<th>Prezime</th>
+	<th>email</th>
+	<th>Status</th>
+	<th>Lozinka</th>
+	<th>Akcija</th>
+</tr>
+<tr ng-repeat="x in korisnici | filter: searchText: exactMatch" >
+	<td>{{x.id}}</td>
+	<td>{{x.ime }}</td>
+	<td>{{x.prezime }}</td>
+	<td>{{x.email}}</td>
+	<td>{{x.status }}</td>
+	<td>{{x.lozinka }}</td>
+	<td><button ng-click="obrisiKorisnika(x.id)">Obriši korisnika</button> <button ng-click="pripremiKorisnika(x)">Izmeni korisnika</button></td>
+</tr>
+</table>
+<br>
+
+</div>
+</body>
+</html>

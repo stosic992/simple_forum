@@ -1,0 +1,17 @@
+<html ng-app="mojModul">
+<head>
+	<meta charset="utf-8" />
+	<title>Angular JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.js"></script>
+	<script src="script7.js"></script>
+</head>
+<body>
+<h2>Angular JS</h2>
+<div ng-controller="kontroler">
+<input type="text" ng-model="ime" placeholder="Unesi ime"><br>
+<input type="text" ng-model="prezime" placeholder="Unesi prezime"/><br><br>
+<button ng-click="posaljiPodatke()">Pošalji podatke</button>
+<div>{{poruka}}</div>
+</div>
+</body>
+</html>
